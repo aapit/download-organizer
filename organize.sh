@@ -52,8 +52,6 @@ loopScans() {
         [ -z "$scanLine" ] && continue
         [ $(isComment $scanLine) ] && hr && cecho "$scanLine" 35 && continue
 
-        local fc="$(echo $scanLine | head -c 2)"
-
         local scanParams=($scanLine)
         eval scanPath=${scanParams[1]}
         eval targetPath=${scanParams[2]}
